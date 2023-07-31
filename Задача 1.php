@@ -4,10 +4,10 @@
 function shorttext($a, $link, $maxlength = 180) {
     
     // Проверка длины текста и разрыв слова
-    if (mb_strlen($a, 'UTF-8') > $maxlength) {
-        $lastspace = mb_strrpos(mb_substr($a, 0, $maxlength, 'UTF-8'), ' ', 0, 'UTF-8');
+    if (mb_strlen($a) > $maxlength) {
+        $lastspace = mb_strrpos(mb_substr($a, 0, $maxlength), ' ', 0);
         // Обрезаем текст до указанной длины
-        $cutstring = mb_substr($a, 0, $lastspace, 'UTF-8');
+        $cutstring = mb_substr($a, 0, $lastspace);
         // Находим последние два слова
         $words = explode(' ', $cutstring);
         $lastword = array_pop($words);
@@ -41,7 +41,6 @@ $link = "https://habr.com/ru/news/751300/";
 $b = shorttext($a, $link);
 
 echo $b;
-
 
 /*Комментарии:
 Важно учесть, что работа может быть связана с многобайтовыми строками, необходимо использовать специальные функции, так как в таких кодировках 
