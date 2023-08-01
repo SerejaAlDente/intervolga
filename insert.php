@@ -14,7 +14,7 @@ if ($conn->connect_error) {
     die("Ошибка подключения: " . $conn->connect_error);
 }
 
-// Обработка данных из формы
+// Обработка данных
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Какая-никакая защита от SQL-инъекций 
@@ -26,15 +26,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $capital = $_POST["capital"];
     $area = $_POST["area"];
     
-    // // Запрос на вставку данных в таблицу
-    if ($sql->execute()) {
-        
-        header("Location: table.php");
-        exit;
+    // Проверка на уже существующее название страны
+    $proverkanames = "SELECT * FROM countries WHERE name = '$name'";
+    $result = $conn->query($proverkanames);
+    if ($result->num_rows > 0) { 
+        echo "В списке уже есть страна с таким названием!";
     } else {
-        echo "Ошибка: " . $sql . "<br>" . $conn->error;
+        if ($sql->execute()) {
+            header("Location: table.php");
+            exit;
+        } else {
+            echo "Ошибка: " . $sql . "<br>" . $conn->error;
+        }
     }
-    
 }
 
 $conn->close();
