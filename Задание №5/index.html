@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylesinsert.css">
+    <title>Форма ввода данных о стране</title>
+</head>
+<body>
+    <h1>Введите данные о стране:</h1>
+    <form action="insert.php" method="post">
+        <label for="name">Название страны:</label>
+        <input type="text" name="name" required><br>
+        <label for="population">Численность населения:</label>
+        <input type="number" name="population" required><br>
+        <label for="capital">Столица:</label>
+        <input type="text" name="capital" required><br>
+        <label for="area">Площадь:</label>
+        <input type="number" name="area" required><br>
+        <input type="submit" value="Добавить данные">
+    </form>
+    <a href="table.php">Список стран</a>
+</body>
+</html>
