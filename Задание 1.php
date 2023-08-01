@@ -12,8 +12,10 @@ function shorttext($a, $link, $maxlength = 180) {
     // Проверка длины текста и разрыв слова
     if (mb_strlen($a) > $maxlength) {
         $lastspace = mb_strrpos(mb_substr($a, 0, $maxlength), ' ', 0);
+        
         // Обрезаем текст до указанной длины
         $cutstring = mb_substr($a, 0, $lastspace);
+        
         // Находим последние два слова
         $words = explode(' ', $cutstring);
         $lastword = array_pop($words);
