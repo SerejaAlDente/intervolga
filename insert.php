@@ -26,12 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $capital = $_POST["capital"];
     $area = $_POST["area"];
     
-    
-    
     // // Запрос на вставку данных в таблицу
-    // $sql = "INSERT INTO countries (name, population, capital, area) VALUES ('$name', '$population', '$capital', '$area')";
-
-
     if ($sql->execute()) {
         
         header("Location: table.php");
