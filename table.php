@@ -9,7 +9,6 @@
     <h1>Список стран:</h1>
     <?php
 
-    
     // Подключение к базе данных
     $servername = "test"; 
     $username = "root";  
@@ -35,7 +34,6 @@
             <th>Площадь</th>
         </tr>";
 
-        
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
             echo "<td>" . $row['name'] . "</td>";
@@ -49,11 +47,9 @@
     } else {
         echo "Нет данных.";
     }
-    
 
     $conn->close();
     ?>
     <a href="index.html">Внести страну в список</a>
 </body>
 </html>
-
