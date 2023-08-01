@@ -1,6 +1,6 @@
 # intervolga
 
-# файлы: countries.sql; index.html; insert.php; stylesinsert.css; stylestable.css относятся к заданию 5б
+# Файлы: countries.sql; index.html; insert.php; stylesinsert.css; stylestable.css относятся к заданию 5б. Файл style.css относится к заданию 2.
 
 # Задания.
 # 1. PHP и HTML. Напишите код на PHP
